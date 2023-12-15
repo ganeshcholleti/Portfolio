@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesh Cholleti - Blog</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ganesh Cholleti</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="blog">
+        <h2>Blog: Exploring Data Analysis with R</h2>
+
+        <section id="eda1">
+            <h3>Exploratory Data Analysis 1: Scatter Plot</h3>
+            <h4>Introduction</h4>
+            <p>In this EDA, we'll create a scatter plot to explore the relationship between two numeric variables.</p>
+
+            <h4>R Code</h4>
+            <pre><code>
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate a random dataset with two numeric variables and one categorical variable
+n &lt;- 100  # Number of observations
+data &lt;- data.frame(
+  X1 = rnorm(n),
+  X2 = rnorm(n, mean = 2),
+  Category = sample(c("A", "B"), n, replace = TRUE)
+)
+
+# Scatter plot
+scatter_plot &lt;- ggplot(data, aes(x = X1, y = X2, color = Category)) +
+  geom_point() +
+  labs(title = "Scatter Plot", x = "X1", y = "X2")
+
+# Save the scatter plot
+ggsave("scatter_plot.png", plot = scatter_plot)
+            </code></pre>
+            <img src="scatter_plot.png" alt="Scatter Plot">
+        </section>
+
+        <section id="eda2">
+            <h3>Exploratory Data Analysis 2: Histogram</h3>
+            <h4>Introduction</h4>
+            <p>In this EDA, we'll create a histogram to explore the distribution of a numeric variable.</p>
+
+            <h4>R Code</h4>
+            <pre><code>
+# Histogram
+histogram_plot &lt;- ggplot(data, aes(x = X1, fill = Category)) +
+  geom_histogram(binwidth = 0.5, position = "identity", alpha = 0.7) +
+  labs(title = "Histogram", x = "X1", y = "Frequency")
+
+# Save the histogram plot
+ggsave("histogram_plot.png", plot = histogram_plot)
+            </code></pre>
+            <img src="histogram_plot.png" alt="Histogram">
+        </section>
+
+        <section id="eda3">
+            <h3>Exploratory Data Analysis 3: Boxplot</h3>
+            <h4>Introduction</h4>
+            <p>In this EDA, we'll create a boxplot to explore the distribution of numeric variables across categories.</p>
+
+            <h4>R Code</h4>
+            <pre><code>
+# Boxplot
+boxplot &lt;- ggplot(data, aes(x = Category, y = X2, fill = Category)) +
+  geom_boxplot() +
+  labs(title = "Boxplot", x = "Category", y = "X2")
+
+# Save the boxplot
+ggsave("boxplot.png", plot = boxplot)
+            </code></pre>
+            <img src="boxplot.png" alt="Boxplot">
+        </section>
+
+        <section id="eda4">
+            <h3>Exploratory Data Analysis 4: Violin Plot</h3>
+            <h4>Introduction</h4>
+            <p>In this EDA, we'll create a violin plot to explore the distribution of numeric variables across categories.</p>
+
+            <h4>R Code</h4>
+            <pre><code>
+# Violin plot
+violin_plot &lt;- ggplot(data, aes(x = Category, y = X1, fill = Category)) +
+  geom_violin() +
+  labs(title = "Violin Plot", x = "Category", y = "X1")
+
+# Save the violin plot
+ggsave("violin_plot.png", plot = violin_plot)
+            </code></pre>
+
+            <img src="violin_plot.png" alt="Violin Plot">
+        </section>
+    </section>
+
+    <section id="conclusion">
+        <h3>Concluding Thoughts</h3>
+        <p>As we conclude this journey of data exploration, each visualization stands as a testament to the power of EDA in unraveling insights. These visual narratives serve as the cornerstone for informed decision-making, outlier identification, and a deeper understanding of the data's story.</p>
+        <p>Feel empowered to adapt and expand upon these techniques in your own projects. Data exploration is a dynamic process, and the more we engage with our data, the more it reveals to us.</p>
+        <p>Thank you for joining me on this exploration!</p>
+    </section>
+
+    <footer>
+        <p>Ganesh Cholleti | Hyderabad, India 500015 | Ph: 8897150466 | saiganeshcholleti@my.unt.edu</p>
+    </footer>
+</body>
+</html>
